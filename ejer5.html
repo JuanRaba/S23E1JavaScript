@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="text" name="calculator" value="">
+    <br>
+    <button class="btn" type="button" name="button" onclick="inputFunction(this)">1</button>
+    <button class="btn" type="button" name="button" onclick="inputFunction(this)">2</button>
+    <button class="btn" type="button" name="button" onclick="inputFunction(this)">3</button>
+    <button class="btn" type="button" name="button" onclick="inputFunction(this)">4</button>
+    <button class="btn" type="button" name="button" onclick="inputFunction(this)">5</button>
+    <button class="btn" type="button" name="button" onclick="inputFunction(this)">6</button>
+    <button class="btn" type="button" name="button" onclick="inputFunction(this)">7</button>
+    <button class="btn" type="button" name="button" onclick="inputFunction(this)">8</button>
+    <button class="btn" type="button" name="button" onclick="inputFunction(this)">9</button>
+    <button class="btn" type="button" name="button" onclick="inputFunction(this)">0</button>
+    <br>
+    <button class="btn" type="button" name="button" onclick="inputFunction(this)">+</button>
+    <button class="btn" type="button" name="button" onclick="inputFunction(this)">-</button>
+    <br>
+    <button class="result" type="button" name="result" onclick="calcTotal()">=</button>
+    <script type="text/javascript">
+      var result = document.getElementsByName("result")[0];
+      var calculator = document.getElementsByName("calculator")[0];
+      var calcTotal = function(){
+        calculator.value = eval(calculator.value);
+      }
+
+      function inputFunction(element){
+        num = element.innerText
+        calculator.value += num
+      }
+    </script>
+
+    <form name="calc">
+      <input type="text" name="display" id="display" value="">
+      <br>
+      <button class="btn" type="button" name="button" onclick="calc.display.value += '1'">1</button>
+      <button class="btn" type="button" name="button" onclick="calc.display.value += '0'">0</button>
+      <button class="btn" type="button" name="button" onclick="calc.display.value += '+'">+</button>
+      <button class="btn" type="button" name="button" onclick="calc.display.value = eval(calc.display.value)">=</button>
+    
+      
+    </form>
+  </body>
+</html>

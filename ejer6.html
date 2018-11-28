@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+</head>
+<body>
+    <button onclick="sortList()">Clasificar Arreglo</button> 
+    <ul id="par">
+        <strong>Pares</strong>
+    </ul>
+    <ul id="impar">
+        <strong>Impares</strong>
+    </ul>
+    <ul id="string">
+        <strong>Strings</strong>
+    </ul>
+    <script>
+      var arr = [1,'dos','tres',4,5,6,'siete',8,9,'diez'];
+      function sortList(){
+        arr.forEach(function(element) {
+          var parent_tag, doc_element
+          if (isEven(element)){
+            parent_tag = document.getElementById('par');
+          } else if (isOdd(element)) {
+            parent_tag = document.getElementById('impar');
+          } else {
+            parent_tag = document.getElementById('string');
+          }
+          doc_element = document.createElement("li");
+          node = document.createTextNode(element);
+          doc_element.appendChild(node);
+          parent_tag.appendChild(doc_element);
+        });
+      }
+      function isEven(n){ return n%2==0 }
+      function isOdd(n){ return n%2==1 }
+    </script>
+La función debe iterar el arreglo:
+Si el elemento del array es un número impar debe ser agregado a la lista ‘Impares’.
+Si el elemento es un número par debe ser agregado a la lista ‘Pares’.
+Si el elemento es un string debe ser agregado a la lista ‘Strings’.
+Los elementos deben ser agregados de manera dinámica manipulando el DOM mediante JS.
+</body>
+</html>
